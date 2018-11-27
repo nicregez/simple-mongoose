@@ -17,7 +17,8 @@ mongoose.connect(appEnv.getServiceURL('mongodb'));
 
 restify.serve(router, mongoose.model('Person', new mongoose.Schema({
   firstname: { type: String, required: true },
-  lastname: { type: String, required: true }
+  lastname: { type: String, required: true },
+  age: { type: Number, required: true }
 })))
 
 app.use(router)
