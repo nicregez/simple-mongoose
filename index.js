@@ -17,8 +17,7 @@ mongoose.connect(appEnv.getServiceURL('mongodb'));
 
 restify.serve(router, mongoose.model('Person', new mongoose.Schema({
   firstname: { type: String, required: true },
-  lastname: { type: String, required: true },
-  age: { type: Number, required: true }
+  lastname: { type: String, required: true }
 })))
 
 app.use(router)
@@ -28,5 +27,5 @@ app.listen(3000, () => {
 })
 
 app.listen(appEnv.port, function () {
-    console.log('Express server listening on port %s', appEnv.port);
+  console.log('Express server listening on port %s', appEnv.port);
 });
